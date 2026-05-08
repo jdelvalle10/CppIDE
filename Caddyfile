@@ -1,0 +1,37 @@
+# =============================================================================
+# Caddyfile — C++ IDE Reverse Proxy
+# Replace "your-server.school.local" with your actual intranet hostname or IP.
+# Caddy must be able to resolve container names — run Caddy in the same
+# Docker network (ide_net) or use container IPs.
+# =============================================================================
+
+your-server.school.local {
+
+    # ── Route per student ──────────────────────────────────────────────────
+    # Pattern: https://your-server.school.local/ide/USERNAME/
+    # Add one handle block per student, matching their username.
+    # The generate_caddyfile.py script (below) auto-generates these.
+
+    handle /ide/jdoe/* {
+        uri strip_prefix /ide/jdoe
+        reverse_proxy ide_jdoe:8080
+    }
+
+    handle /ide/msmith/* {
+        uri strip_prefix /ide/msmith
+        reverse_proxy ide_msmith:8080
+    }
+
+    handle /ide/alopez/* {
+        uri strip_prefix /ide/alopez
+        reverse_proxy ide_alopez:8080
+    }
+
+    # ── Fallback ───────────────────────────────────────────────────────────
+    handle {
+        respond "C++ IDE — please use your assigned URL." 200
+    }
+
+    # ── TLS (self-signed for intranet — Caddy generates automatically) ─────
+    tls internal
+}
