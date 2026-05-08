@@ -87,34 +87,36 @@ Standard libraries available out of the box:
 <stdexcept>, <memory>, <thread>
 
 
-Common Operations
+# Common Operations
 bash# Check all running containers
 docker compose ps
 
-# View logs for a specific student
+## View logs for a specific student
 docker compose logs ide_jdoe
 
-# Restart one student's container
+## Restart one student's container
 docker compose restart ide_jdoe
 
-# Stop all containers (e.g., end of school day)
+## Stop all containers (e.g., end of school day)
 docker compose stop
 
-# Bring all containers back up
+## Bring all containers back up
 docker compose up -d
 
-# Reload Caddy after editing the Caddyfile
+## Reload Caddy after editing the Caddyfile
 sudo systemctl reload caddy
 Adding a New Student Mid-Semester
-bash# 1. Add a row to students.csv
-# 2. Regenerate config files
+bash# 
+## 1. Add a row to students.csv
+
+## 2. Regenerate config files
 python3 generate_compose.py
 python3 generate_caddyfile.py
 
-# 3. Bring up new container (existing ones are unaffected)
+## 3. Bring up new container (existing ones are unaffected)
 docker compose up -d
 
-# 4. Reload Caddy
+## 4. Reload Caddy
 sudo systemctl reload caddy
 Changing a Student's Password
 Edit students.csv, then:
@@ -128,7 +130,7 @@ bash# On the server — find the CA cert
 caddy trust
 
 # Caddy stores its CA at:
-# ~/.local/share/caddy/pki/authorities/local/root.crt
+~/.local/share/caddy/pki/authorities/local/root.crt
 Install that certificate as a trusted root on each student device or push it via your school's MDM/GPO system.
 
 Managing Secrets
