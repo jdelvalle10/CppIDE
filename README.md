@@ -284,5 +284,5 @@ code-server is licensed under the [MIT License](https://github.com/coder/code-se
 ## Contact
 
 **Professor Jose Luis Del Valle**  
-Doral Academy / Miami Dade College  
+Doral Academy / Doral College 
 Cybersecurity, AI, Computer Science & Programming
