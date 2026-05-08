@@ -129,7 +129,7 @@ For a cleaner experience without warnings, distribute Caddy's root CA certificat
 bash# On the server — find the CA cert
 caddy trust
 
-# Caddy stores its CA at:
+## Caddy stores its CA at:
 ~/.local/share/caddy/pki/authorities/local/root.crt
 Install that certificate as a trusted root on each student device or push it via your school's MDM/GPO system.
 
