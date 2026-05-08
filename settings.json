@@ -1,0 +1,15 @@
+{
+    "editor.fontSize": 15,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ -std=c++17 -Wall -Wextra -o $fileNameWithoutExt $fileName && ./$fileNameWithoutExt"
+    },
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 2000
+}
