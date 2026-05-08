@@ -2,7 +2,7 @@
 
 A containerized, browser-based C++ development environment for classroom use, built on [code-server](https://github.com/coder/code-server) (VS Code in the browser), Docker, and Caddy. Designed for intranet deployment — no internet connection required once built.
 
-> Developed for use at **Doral Academy** and **Miami Dade College**  
+> Developed for use at **Doral Academy** and **Doral College**
 > Maintainer: **Professor Del Valle** — Cybersecurity & Computer Science
 
 ---
